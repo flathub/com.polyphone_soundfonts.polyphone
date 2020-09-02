@@ -19,6 +19,8 @@
         /* Allow loading, saving files from anywhere (portals don’t work yet) */
         "--filesystem=home",
         "--filesystem=xdg-run/pipewire-0",
+        /* For jack */
+        "--socket=system-bus",
         /* Polyphone connectivity */
         "--share=network",
         /* Allow other instances to see lockfiles */
@@ -26,6 +28,10 @@
         /* On SuSE it seems to be necessary for sound to work */
         "--env=ALSA_CONFIG_PATH=",
         "--env=QT_AUTO_SCREEN_SCALE_FACTOR=1"
+    ],
+    "cleanup": [
+        "/lib/libjack*",
+        "/lib/jack/*"
     ],
     "modules": [
         {
