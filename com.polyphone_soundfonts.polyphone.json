@@ -9,7 +9,7 @@
     "finish-args": [
         /* X11 + XShm access */
         "--share=ipc",
-        "--socket=x11",
+        "--socket=fallback-x11",
         /* Wayland */
         "--socket=wayland",
         /* Note playback */
@@ -18,20 +18,19 @@
         "--device=all",
         /* Allow loading, saving files from anywhere (portals don’t work yet) */
         "--filesystem=home",
+        /* For pipewire-jack */
         "--filesystem=xdg-run/pipewire-0",
-        /* For jack */
-        "--socket=system-bus",
+        "--system-talk-name=org.freedesktop.RealtimeKit1",
         /* Polyphone connectivity */
         "--share=network",
         /* Allow other instances to see lockfiles */
         "--env=TMPDIR=/var/tmp",
         /* On SuSE it seems to be necessary for sound to work */
         "--env=ALSA_CONFIG_PATH=",
-        "--env=QT_AUTO_SCREEN_SCALE_FACTOR=1"
+        "--env=QT_ENABLE_HIGHDPI_SCALING=1"
     ],
     "cleanup": [
-        "/lib/libjack*",
-        "/lib/jack/*"
+        "/bin/jack*"
     ],
     "modules": [
         {
@@ -62,7 +61,8 @@
             "cleanup": [
                 "/include",
                 "/lib/pkgconfig",
-                "/share"
+                "/share",
+                "*.la"
             ],
             "sources": [
                 {
@@ -104,7 +104,7 @@
                 "install contrib/polyphone.svg -D -t /app/share/icons/hicolor/scalable/apps",
                 "install resources/polyphone.png -D -t /app/share/icons/hicolor/512x512/apps",
                 "install contrib/polyphone.desktop -D -t /app/share/applications",
-                "install contrib/polyphone.xml -D -t /app/share/mime/packages",
+                "install contrib/polyphone.xml -D /app/share/mime/packages/${FLATPAK_ID}.xml",
                 "install contrib/*.1 -D -t /app/share/man/man1",
                 "install README changelog -D -t /share/doc/polyphone",
                 "install com.polyphone_soundfonts.polyphone.metainfo.xml -D -t /app/share/metainfo"
