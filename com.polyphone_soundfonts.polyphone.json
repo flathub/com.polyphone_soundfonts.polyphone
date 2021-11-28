@@ -1,7 +1,7 @@
 {
     "app-id": "com.polyphone_soundfonts.polyphone",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15",
+    "runtime-version": "5.15-21.08",
     "sdk": "org.kde.Sdk",
     "command": "polyphone",
     "rename-desktop-file": "polyphone.desktop",
@@ -33,6 +33,7 @@
         "/bin/jack*"
     ],
     "modules": [
+        "shared-modules/linux-audio/jack2.json",
         {
             "name": "portaudio",
             "config-opts": [
@@ -94,7 +95,6 @@
                 }
             ]
         },
-        "shared-modules/linux-audio/jack2.json",
         {
             "name": "polyphone",
             "buildsystem": "qmake",
