@@ -4,7 +4,6 @@
     "runtime-version": "5.15-21.08",
     "sdk": "org.kde.Sdk",
     "command": "polyphone",
-    "rename-desktop-file": "polyphone.desktop",
     "rename-icon": "polyphone",
     "finish-args": [
         /* X11 + XShm access */
@@ -103,28 +102,18 @@
                 "install bin/polyphone /app/bin",
                 "install contrib/polyphone.svg -D -t /app/share/icons/hicolor/scalable/apps",
                 "install resources/polyphone.png -D -t /app/share/icons/hicolor/512x512/apps",
-                "install contrib/polyphone.desktop -D -t /app/share/applications",
+                "install contrib/com.polyphone_soundfonts.polyphone.desktop -D -t /app/share/applications",
                 "install contrib/polyphone.xml -D /app/share/mime/packages/${FLATPAK_ID}.xml",
-                "install contrib/*.1 -D -t /app/share/man/man1",
                 "install README changelog -D -t /share/doc/polyphone",
                 "install com.polyphone_soundfonts.polyphone.metainfo.xml -D -t /app/share/metainfo"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "http://www.polyphone-soundfonts.com/download/file/689-polyphone-2-2-zip/latest/download?fd7d8db8ad3ed1d98cf0b5a73ffe2a46=1&return=aHR0cHMlM0ElMkYlMkZ3d3cucG9seXBob25lLXNvdW5kZm9udHMuY29tJTJGZG93bmxvYWQ=",
-                    "sha256": "ac6c9f39c10356e44e993f1d3c4454dd8dbdc5e0b5ee3ca387009b4edb0dd269",
-                    "dest-filename": "polyphone-2-2.zip"
-                },
-                {
-                    "type": "patch",
-                    "path": "patches/polyphone-make.patch",
-                    "strip-components": 2
-                },
-                {
-                    "type": "patch",
-                    "path": "patches/polyphone-qt515-fix.patch",
-                    "strip-components": 2
+                    "url": "https://www.polyphone-soundfonts.com/download/file/893-polyphone-2-3-zip/latest/download?6928b4dda335a6697327b794ae30231f=1&return=aHR0cHMlM0ElMkYlMkZ3d3cucG9seXBob25lLXNvdW5kZm9udHMuY29tJTJGZG93bmxvYWQ=",
+                    "sha256": "44adef69bb1ff37f5afc9de1f2fa33da46c310038847b80fc0841fd28ff203da",
+                    "strip-components": 0,
+                    "dest-filename": "polyphone-2-3.zip"
                 },
                 {
                     "type": "file",

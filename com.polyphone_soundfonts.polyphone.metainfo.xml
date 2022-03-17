@@ -34,6 +34,7 @@
  ​<launchable type="desktop-id">com.polyphone_soundfonts.polyphone.desktop</launchable>
  <url type="homepage">https://www.polyphone-soundfonts.com/</url>
  <releases>
+   <release version="2.3" date="2022-03-13" />
    <release type="stable" version="2.2" date="2019-11-14">
      <url>https://www.polyphone-soundfonts.com/all-news/version-2-2/245</url>
    </release>
