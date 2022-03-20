@@ -99,25 +99,26 @@
             "buildsystem": "qmake",
             "post-install": [
                 "make install",
-                "install bin/polyphone /app/bin",
-                "install contrib/polyphone.svg -D -t /app/share/icons/hicolor/scalable/apps",
-                "install resources/polyphone.png -D -t /app/share/icons/hicolor/512x512/apps",
-                "install contrib/com.polyphone_soundfonts.polyphone.desktop -D -t /app/share/applications",
-                "install contrib/polyphone.xml -D /app/share/mime/packages/${FLATPAK_ID}.xml",
-                "install README changelog -D -t /share/doc/polyphone",
-                "install com.polyphone_soundfonts.polyphone.metainfo.xml -D -t /app/share/metainfo"
+                "mv /app/share/mime/packages/polyphone.xml /app/share/mime/packages/${FLATPAK_ID}.xml",
+                "mv /app/share/icons/hicolor/scalable/mimetypes/audio-x-soundfont.svg /app/share/icons/hicolor/scalable/mimetypes/${FLATPAK_ID}.audio-x-soundfont.svg"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.polyphone-soundfonts.com/download/file/893-polyphone-2-3-zip/latest/download?6928b4dda335a6697327b794ae30231f=1&return=aHR0cHMlM0ElMkYlMkZ3d3cucG9seXBob25lLXNvdW5kZm9udHMuY29tJTJGZG93bmxvYWQ=",
-                    "sha256": "44adef69bb1ff37f5afc9de1f2fa33da46c310038847b80fc0841fd28ff203da",
+                    "url": "https://www.polyphone-soundfonts.com/download/file/893-polyphone-2-3-1-zip/latest/download?f97608a9eb7271385f24467f1633ff9d=1&return=aHR0cHMlM0ElMkYlMkZ3d3cucG9seXBob25lLXNvdW5kZm9udHMuY29tJTJGZG93bmxvYWQ=",
+                    "sha256": "c3ffbd53e7b1b5f70da75ee5f638ac353cd74bd9c3e3a0e2dcf694dd280c151e",
                     "strip-components": 0,
-                    "dest-filename": "polyphone-2-3.zip"
+                    "dest-filename": "polyphone-2-3-1.zip"
                 },
                 {
-                    "type": "file",
-                    "path": "com.polyphone_soundfonts.polyphone.metainfo.xml"
+                    "type": "patch",
+                    "path": "patches/polyphone-appdata.patch"
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "touch polyphone.pro"
+                    ]
                 }
             ]
         }
