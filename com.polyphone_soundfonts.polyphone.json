@@ -1,7 +1,7 @@
 {
     "app-id": "com.polyphone_soundfonts.polyphone",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15-21.08",
+    "runtime-version": "5.15-22.08",
     "sdk": "org.kde.Sdk",
     "command": "polyphone",
     "rename-icon": "polyphone",
@@ -19,7 +19,6 @@
         "--filesystem=home",
         /* For pipewire-jack */
         "--filesystem=xdg-run/pipewire-0",
-        "--system-talk-name=org.freedesktop.RealtimeKit1",
         /* Polyphone connectivity */
         "--share=network",
         /* Allow other instances to see lockfiles */
@@ -32,7 +31,6 @@
         "/bin/jack*"
     ],
     "modules": [
-        "shared-modules/linux-audio/jack2.json",
         {
             "name": "portaudio",
             "config-opts": [
@@ -42,7 +40,9 @@
             "cleanup": [
                 "/include",
                 "/lib/pkgconfig",
-                "/share"
+                "/share",
+                "*.a",
+                "*.la"
             ],
             "sources": [
                 {
@@ -56,7 +56,9 @@
             "name": "rtmidi",
             "config-opts": [
                 "--disable-static",
-                "--enable-shared"
+                "--enable-shared",
+                "--with-alsa",
+                "--with-jack"
             ],
             "cleanup": [
                 "/include",
@@ -97,6 +99,9 @@
         {
             "name": "polyphone",
             "buildsystem": "qmake",
+            "cleanup": [
+                "/share/man"
+            ],
             "post-install": [
                 "make install",
                 "mv /app/share/mime/packages/polyphone.xml /app/share/mime/packages/${FLATPAK_ID}.xml",
