@@ -1,34 +1,25 @@
 {
     "app-id": "com.polyphone_soundfonts.polyphone",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15-22.08",
+    "runtime-version": "5.15-23.08",
     "sdk": "org.kde.Sdk",
     "command": "polyphone",
     "rename-icon": "polyphone",
+    "rename-mime-file": "polyphone.xml",
+    "rename-mime-icons": [
+        "audio-x-soundfont"
+    ],
     "finish-args": [
-        /* X11 + XShm access */
         "--share=ipc",
         "--socket=fallback-x11",
-        /* Wayland */
         "--socket=wayland",
-        /* Note playback */
         "--socket=pulseaudio",
-        /* MIDI */
-        "--device=all",
-        /* Allow loading, saving files from anywhere (portals don’t work yet) */
         "--filesystem=home",
-        /* For pipewire-jack */
         "--filesystem=xdg-run/pipewire-0",
-        /* Polyphone connectivity */
         "--share=network",
-        /* Allow other instances to see lockfiles */
         "--env=TMPDIR=/var/tmp",
-        /* On SuSE it seems to be necessary for sound to work */
         "--env=ALSA_CONFIG_PATH=",
         "--env=QT_ENABLE_HIGHDPI_SCALING=1"
-    ],
-    "cleanup": [
-        "/bin/jack*"
     ],
     "modules": [
         {
@@ -103,9 +94,7 @@
                 "/share/man"
             ],
             "post-install": [
-                "make install",
-                "mv /app/share/mime/packages/polyphone.xml /app/share/mime/packages/${FLATPAK_ID}.xml",
-                "mv /app/share/icons/hicolor/scalable/mimetypes/audio-x-soundfont.svg /app/share/icons/hicolor/scalable/mimetypes/${FLATPAK_ID}.audio-x-soundfont.svg"
+                "make install"
             ],
             "sources": [
                 {
