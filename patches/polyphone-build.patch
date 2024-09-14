@@ -1,0 +1,39 @@
+diff --git a/sources/contrib/io.polyphone.polyphone.metainfo.xml b/sources/contrib/io.polyphone.polyphone.metainfo.xml
+index c24f222..faf59b1 100644
+--- a/sources/contrib/io.polyphone.polyphone.metainfo.xml
++++ b/sources/contrib/io.polyphone.polyphone.metainfo.xml
+@@ -6,6 +6,7 @@
+  <project_license>GPL-3.0+</project_license>
+  <name>Polyphone</name>
+  <summary>Turn any sound into a musical instrument.</summary>
++ <developer_name>Polyphone Developers</developer_name>
+  <description>
+    <p>
+      Polyphone is a soundfont editor for quickly designing musical instruments.
+diff --git a/sources/core/sample/sampleutils.cpp b/sources/core/sample/sampleutils.cpp
+index 7eaedee..21ebcbc 100644
+--- a/sources/core/sample/sampleutils.cpp
++++ b/sources/core/sample/sampleutils.cpp
+@@ -73,8 +73,8 @@ QVector<float> SampleUtils::resampleMono(QVector<float> vData, double echInit, q
+ 
+             // Application fenêtre
+             delta = static_cast<double>(j + nbPoints - delta) / (1 + 2 * nbPoints) * 2048;
+-            pos1 = static_cast<qint32>(qMax(0.f, qMin(floor(delta), 2047.f)) + .5f);
+-            pos2 = static_cast<qint32>(qMax(0.f, qMin(ceil (delta), 2047.f)) + .5f);
++            pos1 = static_cast<qint32>(qMax((double)0.f, qMin(floor(delta), (double)2047.f)) + .5f);
++            pos2 = static_cast<qint32>(qMax((double)0.f, qMin(ceil (delta), (double)2047.f)) + .5f);
+             sincCoef[j + nbPoints] *= kbdWindow[pos1] * (ceil((delta)) - delta)
+                     + kbdWindow[pos2] * (1. - ceil((delta)) + delta);
+         }
+diff --git a/sources/player/playerpresetlist.cpp b/sources/player/playerpresetlist.cpp
+index db6e661..599dc37 100644
+--- a/sources/player/playerpresetlist.cpp
++++ b/sources/player/playerpresetlist.cpp
+@@ -22,6 +22,7 @@
+ **             Date: 01.01.2013                                           **
+ ***************************************************************************/
+ 
++#include <math.h>
+ #include "playerpresetlist.h"
+ 
+ PlayerPresetList::PlayerPresetList(QWidget *parent) : QListView(parent)
