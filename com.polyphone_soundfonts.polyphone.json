@@ -4,16 +4,16 @@
     "runtime-version": "5.15-23.08",
     "sdk": "org.kde.Sdk",
     "command": "polyphone",
+    "rename-appdata-file": "io.polyphone.polyphone.metainfo.xml",
+    "rename-desktop-file": "io.polyphone.polyphone.desktop",
     "rename-icon": "polyphone",
     "rename-mime-file": "polyphone.xml",
-    "rename-mime-icons": [
-        "audio-x-soundfont"
-    ],
     "finish-args": [
         "--share=ipc",
         "--socket=fallback-x11",
         "--socket=wayland",
         "--socket=pulseaudio",
+        "--device=dri",
         "--filesystem=home",
         "--filesystem=xdg-run/pipewire-0",
         "--share=network",
@@ -90,6 +90,7 @@
         {
             "name": "polyphone",
             "buildsystem": "qmake",
+            "subdir": "sources",
             "cleanup": [
                 "/share/man"
             ],
@@ -99,14 +100,12 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://www.polyphone-soundfonts.com/download/file/893-polyphone-2-3-1-zip/latest/download?f97608a9eb7271385f24467f1633ff9d=1&return=aHR0cHMlM0ElMkYlMkZ3d3cucG9seXBob25lLXNvdW5kZm9udHMuY29tJTJGZG93bmxvYWQ=",
-                    "sha256": "c3ffbd53e7b1b5f70da75ee5f638ac353cd74bd9c3e3a0e2dcf694dd280c151e",
-                    "strip-components": 0,
-                    "dest-filename": "polyphone-2-3-1.zip"
+                    "url": "https://github.com/davy7125/polyphone/archive/refs/tags/2.4.0.tar.gz",
+                    "sha256": "5742f50980d0181a2889f46ab38e932aacd35965b4b0ab31d01f29721ddd39ef"
                 },
                 {
                     "type": "patch",
-                    "path": "patches/polyphone-appdata.patch"
+                    "path": "patches/polyphone-build.patch"
                 },
                 {
                     "type": "shell",
