@@ -100,8 +100,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/davy7125/polyphone/archive/refs/tags/2.4.0.tar.gz",
-                    "sha256": "5742f50980d0181a2889f46ab38e932aacd35965b4b0ab31d01f29721ddd39ef"
+                    "url": "https://github.com/davy7125/polyphone/archive/refs/tags/2.4.1.tar.gz",
+                    "sha256": "b35c389d98fdc95b7b84a1f9faa99d070aef264012bb0e242cf5e3f728eefaf4"
                 },
                 {
                     "type": "patch",
