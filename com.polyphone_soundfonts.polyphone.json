@@ -1,7 +1,7 @@
 {
     "app-id": "com.polyphone_soundfonts.polyphone",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15-23.08",
+    "runtime-version": "5.15-24.08",
     "sdk": "org.kde.Sdk",
     "command": "polyphone",
     "rename-appdata-file": "io.polyphone.polyphone.metainfo.xml",
