@@ -100,19 +100,12 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/davy7125/polyphone/archive/refs/tags/2.5.0.tar.gz",
-                    "sha256": "48c923b2d7be94b4a1ed4b3d6a29850bde81a5444d5790279e91779470354e63"
+                    "url": "https://github.com/davy7125/polyphone/archive/refs/tags/2.5.1.tar.gz",
+                    "sha256": "e410ea57688681c7e675ee1fd0df142bf0bf3e655220f990f1151ce4ea116f3f"
                 },
                 {
                     "type": "patch",
                     "path": "patches/polyphone-build.patch"
-                },
-                {
-                    "type": "patch",
-                    "only-arches": [
-                        "aarch64"
-                    ],
-                    "path": "patches/polyphone-aarch64.patch"
                 },
                 {
                     "type": "shell",
