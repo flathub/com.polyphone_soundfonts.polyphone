@@ -1,7 +1,7 @@
 {
     "app-id": "com.polyphone_soundfonts.polyphone",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15-24.08",
+    "runtime-version": "5.15-25.08",
     "sdk": "org.kde.Sdk",
     "command": "polyphone",
     "rename-appdata-file": "io.polyphone.polyphone.metainfo.xml",
@@ -60,7 +60,7 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "http://www.music.mcgill.ca/~gary/rtmidi/release/rtmidi-4.0.0.tar.gz",
+                    "url": "http://caml.music.mcgill.ca/~gary/rtmidi/release/rtmidi-4.0.0.tar.gz",
                     "sha256": "370cfe710f43fbeba8d2b8c8bc310f314338c519c2cf2865e2d2737b251526cd"
                 }
             ]
