@@ -67,27 +67,6 @@
         },
         "shared-modules/linux-audio/stk.json",
         {
-            "name": "qcustomplot",
-            "buildsystem": "qmake",
-            "cleanup": [
-                "/include"
-            ],
-            "config-opts": [
-                "LIBDIR=/app/lib"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://www.qcustomplot.com/release/2.0.1/QCustomPlot-source.tar.gz",
-                    "sha256": "574cee47def3251d080168a23428859214277cb9b6876bcdb9ce9d00b2403fe4"
-                },
-                {
-                    "type": "file",
-                    "path": "patches/qcustomplot.pro"
-                }
-            ]
-        },
-        {
             "name": "polyphone",
             "buildsystem": "qmake",
             "subdir": "sources",
@@ -100,8 +79,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/davy7125/polyphone/archive/refs/tags/2.5.1.tar.gz",
-                    "sha256": "e410ea57688681c7e675ee1fd0df142bf0bf3e655220f990f1151ce4ea116f3f"
+                    "url": "https://github.com/davy7125/polyphone/archive/refs/tags/2.6.0.tar.gz",
+                    "sha256": "f5f817504c17c32cc5c574c55eff5c6e2ae3a0ee1e332b63aee48a34842fd5da"
                 },
                 {
                     "type": "patch",
