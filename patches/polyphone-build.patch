@@ -1,24 +1,25 @@
-diff --git a/sources/contrib/io.polyphone.polyphone.metainfo.xml b/sources/contrib/io.polyphone.polyphone.metainfo.xml
-index c24f222..faf59b1 100644
---- a/sources/contrib/io.polyphone.polyphone.metainfo.xml
-+++ b/sources/contrib/io.polyphone.polyphone.metainfo.xml
-@@ -6,6 +6,7 @@
+diff --git a/packaging/io.polyphone.polyphone.metainfo.xml b/packaging/io.polyphone.polyphone.metainfo.xml
+index 5a88ded..bd7b351 100644
+--- a/packaging/io.polyphone.polyphone.metainfo.xml
++++ b/packaging/io.polyphone.polyphone.metainfo.xml
+@@ -4,7 +4,10 @@
+  <metadata_license>CC0</metadata_license>
   <project_license>GPL-3.0+</project_license>
   <name>Polyphone</name>
-  <summary>Turn any sound into a musical instrument.</summary>
-+ <developer_name>Polyphone Developers</developer_name>
+- <summary>Turn any sound into a musical instrument.</summary>
++ <summary>Turn any sound into a musical instrument</summary>
++ <developer id="io.polyphone">
++   <name>Polyphone Developers</name>
++ </developer>
   <description>
     <p>
       Polyphone is a soundfont editor for quickly designing musical instruments.
-diff --git a/sources/player/playerpresetlist.cpp b/sources/player/playerpresetlist.cpp
-index db6e661..599dc37 100644
---- a/sources/player/playerpresetlist.cpp
-+++ b/sources/player/playerpresetlist.cpp
-@@ -22,6 +22,7 @@
- **             Date: 01.01.2013                                           **
- ***************************************************************************/
- 
-+#include <math.h>
- #include "playerpresetlist.h"
- 
- PlayerPresetList::PlayerPresetList(QWidget *parent) : QListView(parent)
+@@ -33,6 +36,8 @@
+  ​<launchable type="desktop-id">io.polyphone.polyphone.desktop</launchable>
+  <url type="homepage">https://www.polyphone.io/</url>
+  <releases>
++   <release type="stable" version="2.6" date="2026-05-15" />
++   <release type="stable" version="2.5.1" date="2025-01-19" />
+    <release type="stable" version="2.5" date="2024-12-22">
+      <url>https://www.polyphone.io/en/news/version-2-5</url>
+    </release>
