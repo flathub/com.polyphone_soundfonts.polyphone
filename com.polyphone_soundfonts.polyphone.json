@@ -84,7 +84,10 @@
                 },
                 {
                     "type": "patch",
-                    "path": "patches/polyphone-build.patch"
+                    "paths": [
+			"patches/polyphone-build.patch",
+			"patches/polyphone-nobeta.patch"
+		    ]
                 },
                 {
                     "type": "shell",
