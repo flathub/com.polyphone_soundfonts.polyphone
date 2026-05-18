@@ -80,14 +80,11 @@
                 {
                     "type": "archive",
                     "url": "https://github.com/davy7125/polyphone/archive/refs/tags/2.6.0.tar.gz",
-                    "sha256": "f5f817504c17c32cc5c574c55eff5c6e2ae3a0ee1e332b63aee48a34842fd5da"
+                    "sha256": "5bd074509fef364fe63441ef2dde0376aa7d6d0901851148dd75e95883eb44d7"
                 },
                 {
                     "type": "patch",
-                    "paths": [
-			"patches/polyphone-build.patch",
-			"patches/polyphone-nobeta.patch"
-		    ]
+                    "path": "patches/polyphone-build.patch"
                 },
                 {
                     "type": "shell",
