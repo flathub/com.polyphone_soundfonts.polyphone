@@ -18,7 +18,7 @@ index 5a88ded..bd7b351 100644
   ​<launchable type="desktop-id">io.polyphone.polyphone.desktop</launchable>
   <url type="homepage">https://www.polyphone.io/</url>
   <releases>
-+   <release type="stable" version="2.6" date="2026-05-17" />
++   <release type="stable" version="2.6" date="2026-05-25" />
 +   <release type="stable" version="2.5.1" date="2025-01-19" />
     <release type="stable" version="2.5" date="2024-12-22">
       <url>https://www.polyphone.io/en/news/version-2-5</url>
