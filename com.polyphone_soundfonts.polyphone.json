@@ -80,7 +80,7 @@
                 {
                     "type": "archive",
                     "url": "https://github.com/davy7125/polyphone/archive/refs/tags/2.6.0.tar.gz",
-                    "sha256": "5bd074509fef364fe63441ef2dde0376aa7d6d0901851148dd75e95883eb44d7"
+                    "sha256": "25579f338ce7bf7112b7554094f24790ad3b8c617ad4119c3a37a3e89b856e28"
                 },
                 {
                     "type": "patch",
