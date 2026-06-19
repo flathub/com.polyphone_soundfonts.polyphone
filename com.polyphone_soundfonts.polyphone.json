@@ -15,7 +15,7 @@
         "--socket=pulseaudio",
         "--device=dri",
         "--filesystem=home",
-        "--filesystem=xdg-run/pipewire-0",
+        "--filesystem=xdg-run/pipewire-0:ro",
         "--share=network",
         "--env=TMPDIR=/var/tmp",
         "--env=ALSA_CONFIG_PATH=",
