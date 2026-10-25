@@ -1,7 +1,7 @@
 {
     "app-id": "com.polyphone_soundfonts.polyphone",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15-25.08",
+    "runtime-version": "6.11",
     "sdk": "org.kde.Sdk",
     "command": "polyphone",
     "rename-appdata-file": "io.polyphone.polyphone.metainfo.xml",
@@ -15,7 +15,7 @@
         "--socket=pulseaudio",
         "--device=dri",
         "--filesystem=home",
-        "--filesystem=xdg-run/pipewire-0",
+        "--filesystem=xdg-run/pipewire-0:ro",
         "--share=network",
         "--env=TMPDIR=/var/tmp",
         "--env=ALSA_CONFIG_PATH=",
